@@ -421,6 +421,7 @@ body._loaded {
 }
 
 .title {
+  font-style: italic;
   letter-spacing: 0.04em;
   background: linear-gradient(180deg, #a9ffff 0%, #75ffee 100%);
   -webkit-background-clip: text;
@@ -784,15 +785,56 @@ body._loaded {
 
 .field__body {
   min-height: 100%;
-  background: url("../img/game/field.png") center/contain no-repeat;
+}
+.field__square {
+  position: absolute;
+  top: 0.9375rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+@supports (max-width: clamp( 18.75rem , 9.2625rem  +  27.6vw , 23.0625rem )) {
+  .field__square img {
+    max-width: clamp( 18.75rem , 9.2625rem  +  27.6vw , 23.0625rem );
+  }
+}
+@supports not (max-width: clamp( 18.75rem , 9.2625rem  +  27.6vw , 23.0625rem )) {
+  .field__square img {
+    max-width: calc(18.75rem + 4.3125 * (100vw - 34.375rem) / 15.625);
+  }
+}
+@media (min-height: 37.5em) {
+  .field__square {
+    top: 3.125rem;
+  }
+  @supports (max-width: clamp( 23.0625rem , -12.0625rem  +  70.25vw , 40.625rem )) {
+    .field__square img {
+      max-width: clamp( 23.0625rem , -12.0625rem  +  70.25vw , 40.625rem );
+    }
+  }
+  @supports not (max-width: clamp( 23.0625rem , -12.0625rem  +  70.25vw , 40.625rem )) {
+    .field__square img {
+      max-width: calc(23.0625rem + 17.5625 * (100vw - 50rem) / 25);
+    }
+  }
 }
 .field__field {
   display: flex;
   margin: 0 auto;
 }
 .field__inner {
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+@supports (top: clamp( 0.3125rem , -1.75rem  +  6vw , 1.25rem )) {
+  .field__inner {
+    top: clamp( 0.3125rem , -1.75rem  +  6vw , 1.25rem );
+  }
+}
+@supports not (top: clamp( 0.3125rem , -1.75rem  +  6vw , 1.25rem )) {
+  .field__inner {
+    top: calc(0.3125rem + 0.9375 * (100vw - 34.375rem) / 15.625);
+  }
 }
 .field__wrapper {
   position: relative;
@@ -801,12 +843,7 @@ body._loaded {
 }
 @media (min-height: 37.5em) {
   .field__wrapper {
-    margin-top: 8.125rem;
-  }
-}
-@media (min-height: 50em) {
-  .field__wrapper {
-    margin-top: 8.75rem;
+    margin-top: 5.3125rem;
   }
 }
 .field__wrapper._hold {
@@ -910,6 +947,7 @@ body._loaded {
   }
 }
 .info-game__goal-count {
+  font-style: italic;
   font-weight: 800;
   line-height: 1.21875;
   color: #d0fff1;
@@ -1005,6 +1043,7 @@ body._loaded {
   bottom: 0;
   right: 0;
   font-weight: 600;
+  font-style: italic;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -1202,12 +1241,14 @@ body._loaded {
   row-gap: 1.875rem;
 }
 .win__sub-text {
+  font-style: italic;
   color: #fff;
   font-size: 3.5rem;
   font-weight: 900;
   white-space: nowrap;
 }
 .win__text {
+  font-style: italic;
   color: rgb(248, 232, 133);
   font-size: 3.125rem;
   font-weight: 900;
@@ -1224,12 +1265,9 @@ body._loaded {
   margin-bottom: 0.9375rem;
 }
 .win__button p {
+  font-style: italic;
   font-size: 1.25rem;
   line-height: 1.2142857143;
-}
-
-.robo {
-  perspective: 1000px;
 }
 
 .left-hand {
