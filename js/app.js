@@ -138,8 +138,12 @@
         if (document.querySelector(".footer-game__input")) {
             let input = document.querySelector(".footer-game__input");
             input.addEventListener("input", (e => {
+                document.querySelector(".footer-game__bet").classList.add("_bg");
                 if (input.value.length >= 4) input.value = input.value.substring(0, 4);
                 sessionStorage.setItem("current-bet", +input.value);
+            }));
+            window.addEventListener("click", (() => {
+                if (document.querySelector(".footer-game__bet").classList.contains("_bg")) document.querySelector(".footer-game__bet").classList.remove("_bg");
             }));
         }
         document.querySelector(".level").textContent = sessionStorage.getItem("level");

@@ -1140,6 +1140,7 @@ body._loaded {
   border-bottom-width: 0;
   border-top-left-radius: 0.375rem;
   border-top-right-radius: 0.375rem;
+  transition: all 0.3s ease 0s;
 }
 @media (min-height: 37.5em) {
   .footer-game__bet {
@@ -1147,6 +1148,9 @@ body._loaded {
     border-top-left-radius: 1.25rem;
     border-top-right-radius: 1.25rem;
   }
+}
+.footer-game__bet._bg {
+  background: linear-gradient(180deg, #c9ffb4 0%, rgba(124, 163, 111, 0) 100%);
 }
 .footer-game__input-box {
   max-width: 9.0625rem;
